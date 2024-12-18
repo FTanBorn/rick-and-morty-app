@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --background: #f8fafc;
+  --foreground: #1e293b;
+  --card: #ffffff;
+  --card-border: #e2e8f0;
+  --muted: #64748b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #60a5fa;
+    --primary-hover: #3b82f6;
+    --background: #0f172a;
+    --foreground: #e2e8f0;
+    --card: #1e293b;
+    --card-border: #334155;
+    --muted: #94a3b8;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@layer components {
+  .pagination-button {
+    @apply px-4 py-2 border rounded-lg transition-colors text-foreground bg-card hover:bg-primary hover:text-white disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .pagination-button-active {
+    @apply bg-primary text-white border-primary;
+  }
+
+  .card {
+    @apply bg-card border border-card-border rounded-lg p-4 hover:shadow-lg transition-all duration-200;
+  }
+
+  .filter-section {
+    @apply bg-card p-4 rounded-lg border border-card-border;
+  }
+}
